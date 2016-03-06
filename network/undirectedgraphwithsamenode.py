@@ -35,7 +35,7 @@ nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='r', node_size=500, al
 
 # draw the edges
 nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
-nx.draw_networkx_edges(G, pos, edgelist=edges, width=8, alpha=0.5, edge_color='r')
+nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=0.5, edge_color='r')
 
 # use plt plot the graph and remove axis
 plt.axis('off')
