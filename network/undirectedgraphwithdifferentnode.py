@@ -3,8 +3,8 @@
 #
 # Author: Archer Reilly
 # Date: 06/Mar/2016
-# File: undirectedgraphwithsamenode.py
-# Desc: draw graph of undirected with same node type
+# File: undirectedgraphwithdifferentnode.py
+# Desc: draw graph of undirected with different node type
 #
 # Produced By CSRGXTU
 import matplotlib.pyplot as plt
@@ -31,13 +31,16 @@ edges = [(1, 2), (1, 6), (2, 4), (3, 4), (3, 6), (4, 6), (5, 6)]
 G.add_edges_from(edges)
 
 # draw the nodes
-nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='r', node_size=300, alpha=1)
+# nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='r', node_size=500, alpha=0.8)
+nx.draw_networkx_nodes(G, pos, nodelist=[1, 2], node_color='r', node_size=300, alpha=1)
+nx.draw_networkx_nodes(G, pos, nodelist=[3, 6], node_color='b', node_size=300, alpha=1)
+nx.draw_networkx_nodes(G, pos, nodelist=[4, 5], node_color='g', node_size=300, alpha=1)
 
 # draw the edges
 nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
-nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=1)
+nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=0.5)
 
 # use plt plot the graph and remove axis
 plt.axis('off')
-plt.savefig("undirectedgraphwithsamenode.png")
+plt.savefig("undirectedgraphwithdifferentnode.png")
 plt.show()
