@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# coding=utf8
+#
+# Author: Archer Reilly
+# Date: 06/Mar/2016
+# File: undirectedgraphwithsamenode.py
+# Desc: draw graph of undirected with same node type
+#
+# Produced By CSRGXTU
+import matplotlib.pyplot as plt
+import networkx as nx
+from numpy import array
+
+G = nx.Graph()
+
+# add 6 same nodes
+nodes = [1, 2, 3, 4, 5, 6]
+G.add_nodes_from(nodes)
+
+# nodes coordinates
+pos = nx.spring_layout(G)
+pos[1] = array([-1,  0])
+pos[2] = array([-0.6, -1])
+pos[3] = array([0.7, -1])
+pos[4] = array([1,  0.2])
+pos[5] = array([-0.5,  1])
+pos[6] = array([0, 0])
+
+# add edges between nodes
+edges = [(1, 2), (1, 6), (2, 4), (3, 4), (3, 6), (4, 6), (5, 6)]
+G.add_edges_from(edges)
+
+# draw the nodes
+nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='r', node_size=500, alpha=0.8)
+
+# draw the edges
+nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
+nx.draw_networkx_edges(G, pos, edgelist=edges, width=8, alpha=0.5, edge_color='r')
+
+# use plt plot the graph and remove axis
+plt.axis('off')
+plt.show()
