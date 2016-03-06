@@ -39,4 +39,5 @@ nx.draw_networkx_edges(G, pos, edgelist=edges, width=8, alpha=0.5, edge_color='r
 
 # use plt plot the graph and remove axis
 plt.axis('off')
+plt.savefig("undirectedgraphwithsamenode.png")
 plt.show()
