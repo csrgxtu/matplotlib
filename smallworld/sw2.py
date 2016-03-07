@@ -27,11 +27,8 @@ for a in list_radians:
     list_x2_axis.append(cos(a))
     list_y2_axis.append(sin(a))
 
-# list_x2_axis.pop()
-# list_y2_axis.pop()
 list_x2_axis = list_x2_axis[1:]
 list_y2_axis = list_y2_axis[1:]
-print len(list_x2_axis)
 
 # set axis limits
 plt.xlim(-1.5,1.5)
@@ -43,8 +40,6 @@ G.add_nodes_from(nodes)
 pos = nx.spring_layout(G)
 for i in range(1, 19):
     pos[i] = array([list_x2_axis[i - 1], list_y2_axis[i - 1]])
-
-print pos
 
 edges = []
 for i in range(1, 19):
@@ -68,10 +63,6 @@ edges.append((1, 8))
 nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='k', node_size=50, alpha=1)
 nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
 nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=1)
-
-# plot the coordinates
-# plt.plot(list_x2_axis,list_y2_axis,c='r')
-# plt.plot(list_x2_axis,list_y2_axis,'k*')
 
 # show the plot
 plt.show()
