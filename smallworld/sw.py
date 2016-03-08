@@ -53,6 +53,10 @@ for i in range(1, 19):
 edges = edges[0:-2]
 edges.append((17, 1))
 edges.append((18, 2))
+for i in range(1, 19):
+    edges.append((i, i + 1))
+edges = edges[0:-1]
+edges.append((18, 1))
 
 nx.draw_networkx_nodes(G, pos, nodelist=nodes, node_color='k', node_size=50, alpha=1)
 nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5)
@@ -64,4 +68,5 @@ nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=1)
 
 # show the plot
 plt.axis('off')
+plt.savefig("sw.png")
 plt.show()

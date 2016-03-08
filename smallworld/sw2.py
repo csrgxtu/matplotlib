@@ -66,6 +66,11 @@ edges.append((16, 4))
 edges.append((18, 7))
 edges.append((1, 8))
 
+for i in range(1, 19):
+    edges.append((i, i + 1))
+edges = edges[0:-1]
+edges.append((18, 1))
+
 plt.axis('off')
 npos = {}
 for key, val in pos.items():
@@ -78,4 +83,5 @@ nx.draw_networkx_edges(G, npos, width=1.0, alpha=0.5)
 nx.draw_networkx_edges(G, npos, edgelist=edges, width=1.0, alpha=1)
 
 # show the plot
+plt.savefig("sw2.png")
 plt.show()
