@@ -68,4 +68,5 @@ nx.draw_networkx_edges(G, pos, edgelist=edges, width=1.0, alpha=1)
 # plt.plot(list_x2_axis,list_y2_axis,'k*')
 
 # show the plot
+plt.axis('off')
 plt.show()

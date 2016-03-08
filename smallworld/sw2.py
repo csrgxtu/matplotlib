@@ -35,8 +35,8 @@ list_y2_axis = list_y2_axis[1:]
 plt.xlim(-1.5,1.5)
 plt.ylim(-1.5,1.5)
 
-# G = nx.Graph()
-G=nx.grid_graph(dim=[3,1])
+G = nx.Graph()
+# G=nx.grid_graph(dim=[3,1])
 # G = gridspec.GridSpec(1, 3)
 
 nodes = range(1, 19)
@@ -66,7 +66,6 @@ edges.append((16, 4))
 edges.append((18, 7))
 edges.append((1, 8))
 
-plt.subplot(1,1,1)
 plt.axis('off')
 npos = {}
 for key, val in pos.items():
@@ -75,17 +74,7 @@ for key, val in pos.items():
         # print key, val
         npos[key] = array(val)
 nx.draw_networkx_nodes(G, npos, nodelist=nodes, node_color='k', node_size=50, alpha=1)
-# nx.draw_networkx_edges(G, npos, width=1.0, alpha=0.5)
-nx.draw_networkx_edges(G, npos, edgelist=edges, width=1.0, alpha=1)
-
-plt.subplot(112)
-plt.axis('off')
-nx.draw_networkx_nodes(G, npos, nodelist=nodes, node_color='k', node_size=50, alpha=1)
-nx.draw_networkx_edges(G, npos, edgelist=edges, width=1.0, alpha=1)
-
-plt.subplot(113)
-plt.axis('off')
-nx.draw_networkx_nodes(G, npos, nodelist=nodes, node_color='k', node_size=50, alpha=1)
+nx.draw_networkx_edges(G, npos, width=1.0, alpha=0.5)
 nx.draw_networkx_edges(G, npos, edgelist=edges, width=1.0, alpha=1)
 
 # show the plot
