@@ -23,7 +23,10 @@ def run():
   # print Y
   # plt.figure(figsize=(8,6), dpi=80)
   plt.plot(X, Y)
+  plt.xlabel(r'$\gamma$', fontsize=20)
+  plt.ylabel('p', fontsize=20)
   plt.savefig('./coordinates.eps', format='eps')
+  plt.savefig('./coordinates.png')
   plt.show()
 
 if __name__ == '__main__':
