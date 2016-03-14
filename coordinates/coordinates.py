@@ -21,7 +21,9 @@ def run():
 
   # print X
   # print Y
+  # plt.figure(figsize=(8,6), dpi=80)
   plt.plot(X, Y)
+  plt.savefig('./coordinates.eps', format='eps')
   plt.show()
 
 if __name__ == '__main__':
