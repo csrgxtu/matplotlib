@@ -21,10 +21,10 @@ def run():
 
   for x in X:
     # Y.append(func(x))
-    Y.append(funca(0.015625, x))
+    Y.append(funca(0.125, x))
 
-  # print X
-  # print Y
+  print X
+  print Y
   # plt.figure(figsize=(8,6), dpi=80)
   plt.plot(X, Y)
   plt.xlabel(r'$\gamma$', fontsize=20)
