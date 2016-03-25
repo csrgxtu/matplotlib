@@ -16,7 +16,7 @@ def funca(gamma, x):
   return (gamma * gamma - gamma * gamma * x) / (2 * x * x)
 
 def run():
-  X = [x/10.0 for x in range(1, 11, 1)]
+  X = [x/100.0 for x in range(1, 101, 1)]
   Y = []
 
   for x in X:
